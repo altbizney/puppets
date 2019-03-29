@@ -1,6 +1,6 @@
 //Maya ASCII 2019 scene
 //Name: worm.ma
-//Last modified: Fri, Mar 29, 2019 05:01:01 PM
+//Last modified: Fri, Mar 29, 2019 05:06:32 PM
 //Codeset: UTF-8
 requires maya "2019";
 requires -nodeType "gameFbxExporter" "gameFbxExporter" "1.0";
@@ -14,19 +14,19 @@ fileInfo "osv" "Mac OS X 10.14";
 createNode transform -s -n "persp";
 	rename -uid "8B452E81-584E-9B9F-4952-859DFBF32367";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 44.364491113790315 16.185710673389949 29.319893414928782 ;
-	setAttr ".r" -type "double3" 169.08029422874444 1921.8839113123008 179.99999999994748 ;
+	setAttr ".t" -type "double3" 66.229049363749482 15.048043909304925 11.004925680169819 ;
+	setAttr ".r" -type "double3" 169.08029422867585 1899.4839113117591 179.99999999989578 ;
 	setAttr ".rp" -type "double3" 2.2204460492503131e-16 -1.7763568394002505e-15 0 ;
 	setAttr ".rpt" -type "double3" -4.4325155123526661e-15 -1.1254463814036245e-14 1.1876772486769556e-14 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "C0BCEDFF-0740-4341-1C8E-DF858D200EF0";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 56.532685068899738;
+	setAttr ".coi" 68.020970173727946;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" -2.7693834304809561 5.4765456423372783 2.384185791015625e-07 ;
+	setAttr ".tp" -type "double3" 0.3525758602357405 2.1626167572841055 -4.4408920985006262e-16 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 	setAttr ".ai_translator" -type "string" "perspective";
 createNode transform -s -n "top";
@@ -1658,7 +1658,6 @@ createNode joint -n "skelton" -p "worm";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".uoc" 1;
 	setAttr ".t" -type "double3" 0 -3.262851535197266 0 ;
-	setAttr ".r" -type "double3" 0 -89.357753202266338 0 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 89.999999999999972 0 89.999999999999972 ;
@@ -1676,7 +1675,6 @@ createNode joint -n "hip1" -p "skelton";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 1;
 	setAttr ".t" -type "double3" 2.4797671667499199 5.8588202377723177e-31 -1.5906768824470335e-15 ;
-	setAttr ".r" -type "double3" 0 57.495701686743061 0 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".bps" -type "matrix" 4.4408920985006262e-16 1 0 0 -4.4408920985006262e-16 0 1 0
@@ -1696,7 +1694,6 @@ createNode joint -n "hip2" -p "hip1";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 2;
 	setAttr ".t" -type "double3" 2.4797671667499204 6.0779482670003767e-31 -1.5906768824470337e-15 ;
-	setAttr ".r" -type "double3" 0 30.028438644372265 0 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".bps" -type "matrix" 4.4408920985006262e-16 1 0 0 -4.4408920985006262e-16 0 1 0
@@ -1716,7 +1713,6 @@ createNode joint -n "hip3" -p "hip2";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 3;
 	setAttr ".t" -type "double3" 2.4797671667499204 5.0918721354741137e-31 -1.5906768824470341e-15 ;
-	setAttr ".r" -type "double3" 0 5.3223749148270088 0 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".bps" -type "matrix" 4.4408920985006262e-16 1 0 0 -4.4408920985006262e-16 0 1 0
@@ -1856,7 +1852,6 @@ createNode joint -n "tail1" -p "tail";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 2;
 	setAttr ".t" -type "double3" 2.5363254074531536 5.8043185307467026e-17 -8.7378765224261438e-16 ;
-	setAttr ".r" -type "double3" 0 16.843061196763742 0 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".bps" -type "matrix" -4.4408920985006257e-16 -1 -1.2246467991473532e-16 0
@@ -1877,7 +1872,6 @@ createNode joint -n "tail2" -p "tail1";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 3;
 	setAttr ".t" -type "double3" 2.5363254074531536 5.80431853074671e-17 -8.7378765224261211e-16 ;
-	setAttr ".r" -type "double3" 0 -47.310402223895679 0 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".bps" -type "matrix" -4.4408920985006257e-16 -1 -1.2246467991473532e-16 0
@@ -4250,7 +4244,7 @@ createNode blinn -n "tex_body";
 createNode shadingEngine -n "blinn1SG";
 	rename -uid "7654C708-A94B-6CBE-0B49-8B83F6276A2E";
 	setAttr ".ihi" 0;
-	setAttr -s 3 ".dsm";
+	setAttr -s 2 ".dsm";
 	setAttr ".ro" yes;
 	setAttr -s 2 ".gn";
 createNode materialInfo -n "materialInfo12";
@@ -4820,7 +4814,7 @@ createNode groupParts -n "groupParts17";
 	setAttr ".ihi" 0;
 	setAttr ".ic" -type "componentList" 2 "f[290:366]" "f[368:369]";
 createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo1";
-	rename -uid "2C7BB2D7-8E4E-5835-64BC-B7A4414AEA56";
+	rename -uid "D618D9FB-1047-D3B5-7889-BFAD7CA9909D";
 	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
 	setAttr ".tgi[0].vl" -type "double2" -1013.095197838452 -604.76188073082676 ;
 	setAttr ".tgi[0].vh" -type "double2" 964.28567596844437 634.5237843100997 ;
@@ -5623,4 +5617,5 @@ connectAttr "file1.msg" ":defaultTextureList1.tx" -na;
 connectAttr "file2.msg" ":defaultTextureList1.tx" -na;
 connectAttr "file3.msg" ":defaultTextureList1.tx" -na;
 connectAttr "file4.msg" ":defaultTextureList1.tx" -na;
+connectAttr "tail3Fat.o" ":internal_standInShader.ic";
 // End of worm.ma
