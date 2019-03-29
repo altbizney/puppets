@@ -1,6 +1,6 @@
 //Maya ASCII 2019 scene
 //Name: worm.ma
-//Last modified: Fri, Mar 29, 2019 04:54:34 PM
+//Last modified: Fri, Mar 29, 2019 05:01:01 PM
 //Codeset: UTF-8
 requires maya "2019";
 requires -nodeType "gameFbxExporter" "gameFbxExporter" "1.0";
@@ -14,19 +14,19 @@ fileInfo "osv" "Mac OS X 10.14";
 createNode transform -s -n "persp";
 	rename -uid "8B452E81-584E-9B9F-4952-859DFBF32367";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 46.553380070837783 7.110463419563775 3.5960357921425263 ;
-	setAttr ".r" -type "double3" 185.28029422817477 93.883911312992495 179.99999999931453 ;
+	setAttr ".t" -type "double3" 44.364491113790315 16.185710673389949 29.319893414928782 ;
+	setAttr ".r" -type "double3" 169.08029422874444 1921.8839113123008 179.99999999994748 ;
 	setAttr ".rp" -type "double3" 2.2204460492503131e-16 -1.7763568394002505e-15 0 ;
 	setAttr ".rpt" -type "double3" -4.4325155123526661e-15 -1.1254463814036245e-14 1.1876772486769556e-14 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "C0BCEDFF-0740-4341-1C8E-DF858D200EF0";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 43.517767907722927;
+	setAttr ".coi" 56.532685068899738;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" 3.3198052644729628 11.115321865440585 0.66086254994167071 ;
+	setAttr ".tp" -type "double3" -2.7693834304809561 5.4765456423372783 2.384185791015625e-07 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 	setAttr ".ai_translator" -type "string" "perspective";
 createNode transform -s -n "top";
@@ -99,7 +99,7 @@ createNode transform -n "body" -p "geo";
 createNode mesh -n "bodyShape" -p "body";
 	rename -uid "0319AF98-6442-2371-65C5-83954B57A61C";
 	setAttr -k off ".v";
-	setAttr -s 8 ".iog[0].og";
+	setAttr -s 10 ".iog[0].og";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr -s 2 ".ciog[0].cog";
@@ -1922,8 +1922,8 @@ createNode joint -n "tail_tip" -p "tail3";
 	setAttr ".radi" 0.97303284292134173;
 createNode lightLinker -s -n "lightLinker1";
 	rename -uid "3B6ECDB2-6046-C658-8E73-329F63D987D1";
-	setAttr -s 22 ".lnk";
-	setAttr -s 22 ".slnk";
+	setAttr -s 23 ".lnk";
+	setAttr -s 23 ".slnk";
 createNode displayLayerManager -n "layerManager";
 	rename -uid "E4594C37-A540-37EC-22D6-158C5E115C5E";
 	setAttr ".cdl" 1;
@@ -4270,8 +4270,8 @@ createNode groupId -n "groupId20";
 createNode groupParts -n "groupParts15";
 	rename -uid "74D23CE0-D042-D325-D432-489FC1DD350E";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 6 "f[0:135]" "f[137:142]" "f[145:150]" "f[152:167]" "f[172:179]" "f[186:377]";
-	setAttr ".irc" -type "componentList" 5 "f[136]" "f[143:144]" "f[151]" "f[168:171]" "f[180:185]";
+	setAttr ".ic" -type "componentList" 8 "f[0:135]" "f[137:142]" "f[145:150]" "f[152:167]" "f[172:179]" "f[186:289]" "f[367]" "f[370:377]";
+	setAttr ".irc" -type "componentList" 7 "f[136]" "f[143:144]" "f[151]" "f[168:171]" "f[180:185]" "f[290:366]" "f[368:369]";
 createNode groupId -n "groupId21";
 	rename -uid "E0014A45-7340-EBDD-733B-ECAC74ADB41D";
 	setAttr ".ihi" 0;
@@ -4803,12 +4803,28 @@ createNode polyColorPerVertex -n "polyColorPerVertex5";
 	setAttr ".vclr[25].vfcl[23].vfal" 1;
 	setAttr ".cn" -type "string" "shadow_tongue";
 	setAttr ".clam" no;
+createNode blinn -n "tex_ring";
+	rename -uid "AF710F66-D44A-0002-10E7-F48BB9AB7793";
+	setAttr ".c" -type "float3" 1 0.49299997 0.62592685 ;
+createNode shadingEngine -n "blinn6SG";
+	rename -uid "CCB797B7-9B4A-F6AB-3CCC-4DAEC53CD010";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "materialInfo17";
+	rename -uid "A50B9608-664A-18F6-6B65-B3AB2A87E7EE";
+createNode groupId -n "groupId23";
+	rename -uid "725C267C-9B40-40F8-B686-5E83A94B5B9C";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts17";
+	rename -uid "BC609CB0-B14D-6D29-3E40-8D9F9495D6E3";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 2 "f[290:366]" "f[368:369]";
 createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo1";
-	rename -uid "D31ECC76-3E40-72F9-CDB5-2A95F48F413D";
+	rename -uid "2C7BB2D7-8E4E-5835-64BC-B7A4414AEA56";
 	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
 	setAttr ".tgi[0].vl" -type "double2" -1013.095197838452 -604.76188073082676 ;
 	setAttr ".tgi[0].vh" -type "double2" 964.28567596844437 634.5237843100997 ;
-	setAttr -s 14 ".tgi[0].ni";
+	setAttr -s 16 ".tgi[0].ni";
 	setAttr ".tgi[0].ni[0].x" -689.28570556640625;
 	setAttr ".tgi[0].ni[0].y" 421.42855834960938;
 	setAttr ".tgi[0].ni[0].nvs" 1923;
@@ -4824,33 +4840,39 @@ createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo1";
 	setAttr ".tgi[0].ni[4].x" 35.714286804199219;
 	setAttr ".tgi[0].ni[4].y" -240;
 	setAttr ".tgi[0].ni[4].nvs" 1923;
-	setAttr ".tgi[0].ni[5].x" 360;
-	setAttr ".tgi[0].ni[5].y" 221.42857360839844;
+	setAttr ".tgi[0].ni[5].x" 655.71429443359375;
+	setAttr ".tgi[0].ni[5].y" -240;
 	setAttr ".tgi[0].ni[5].nvs" 1923;
-	setAttr ".tgi[0].ni[6].x" 325.71429443359375;
-	setAttr ".tgi[0].ni[6].y" -74.285713195800781;
+	setAttr ".tgi[0].ni[6].x" 360;
+	setAttr ".tgi[0].ni[6].y" 221.42857360839844;
 	setAttr ".tgi[0].ni[6].nvs" 1923;
-	setAttr ".tgi[0].ni[7].x" 18.571428298950195;
-	setAttr ".tgi[0].ni[7].y" -95.714286804199219;
+	setAttr ".tgi[0].ni[7].x" 325.71429443359375;
+	setAttr ".tgi[0].ni[7].y" -74.285713195800781;
 	setAttr ".tgi[0].ni[7].nvs" 1923;
-	setAttr ".tgi[0].ni[8].x" 35.714286804199219;
-	setAttr ".tgi[0].ni[8].y" 185.71427917480469;
+	setAttr ".tgi[0].ni[8].x" 18.571428298950195;
+	setAttr ".tgi[0].ni[8].y" -95.714286804199219;
 	setAttr ".tgi[0].ni[8].nvs" 1923;
-	setAttr ".tgi[0].ni[9].x" -271.42855834960938;
-	setAttr ".tgi[0].ni[9].y" -240;
+	setAttr ".tgi[0].ni[9].x" 35.714286804199219;
+	setAttr ".tgi[0].ni[9].y" 185.71427917480469;
 	setAttr ".tgi[0].ni[9].nvs" 1923;
-	setAttr ".tgi[0].ni[10].x" -467.85711669921875;
-	setAttr ".tgi[0].ni[10].y" 421.42855834960938;
+	setAttr ".tgi[0].ni[10].x" -271.42855834960938;
+	setAttr ".tgi[0].ni[10].y" -240;
 	setAttr ".tgi[0].ni[10].nvs" 1923;
-	setAttr ".tgi[0].ni[11].x" -288.57144165039062;
-	setAttr ".tgi[0].ni[11].y" 242.85714721679688;
+	setAttr ".tgi[0].ni[11].x" -467.85711669921875;
+	setAttr ".tgi[0].ni[11].y" 421.42855834960938;
 	setAttr ".tgi[0].ni[11].nvs" 1923;
-	setAttr ".tgi[0].ni[12].x" -891.4285888671875;
-	setAttr ".tgi[0].ni[12].y" -94.285713195800781;
+	setAttr ".tgi[0].ni[12].x" -288.57144165039062;
+	setAttr ".tgi[0].ni[12].y" 242.85714721679688;
 	setAttr ".tgi[0].ni[12].nvs" 1923;
-	setAttr ".tgi[0].ni[13].x" 97.142860412597656;
-	setAttr ".tgi[0].ni[13].y" 608.5714111328125;
+	setAttr ".tgi[0].ni[13].x" -891.4285888671875;
+	setAttr ".tgi[0].ni[13].y" -94.285713195800781;
 	setAttr ".tgi[0].ni[13].nvs" 1923;
+	setAttr ".tgi[0].ni[14].x" 348.57144165039062;
+	setAttr ".tgi[0].ni[14].y" -240;
+	setAttr ".tgi[0].ni[14].nvs" 1923;
+	setAttr ".tgi[0].ni[15].x" 97.142860412597656;
+	setAttr ".tgi[0].ni[15].y" 608.5714111328125;
+	setAttr ".tgi[0].ni[15].nvs" 1923;
 select -ne :time1;
 	setAttr ".o" 62;
 	setAttr ".unw" 62;
@@ -4861,10 +4883,10 @@ select -ne :hardwareRenderingGlobals;
 		 0 0 0 0 ;
 	setAttr ".fprt" yes;
 select -ne :renderPartition;
-	setAttr -s 22 ".st";
+	setAttr -s 23 ".st";
 select -ne :renderGlobalsList1;
 select -ne :defaultShaderList1;
-	setAttr -s 9 ".s";
+	setAttr -s 10 ".s";
 select -ne :postProcessList1;
 	setAttr -s 2 ".p";
 select -ne :defaultRenderUtilityList1;
@@ -4892,7 +4914,9 @@ connectAttr "groupId20.id" "bodyShape.iog.og[43].gid";
 connectAttr "blinn1SG.mwc" "bodyShape.iog.og[43].gco";
 connectAttr "groupId22.id" "bodyShape.iog.og[44].gid";
 connectAttr "blinn2SG.mwc" "bodyShape.iog.og[44].gco";
-connectAttr "polyColorPerVertex4.out" "bodyShape.i";
+connectAttr "groupId23.id" "bodyShape.iog.og[46].gid";
+connectAttr "blinn6SG.mwc" "bodyShape.iog.og[46].gco";
+connectAttr "groupParts17.og" "bodyShape.i";
 connectAttr "groupId21.id" "bodyShape.ciog.cog[2].cgid";
 connectAttr "polyTweakUV7.uvtk[0]" "bodyShape.uvst[0].uvtw";
 connectAttr "skinCluster2GroupId.id" "pupilRightShape.iog.og[10].gid";
@@ -4983,6 +5007,7 @@ relationship "link" ":lightLinker1" "blinn2SG.message" ":defaultLightSet.message
 relationship "link" ":lightLinker1" "blinn3SG.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "blinn4SG.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "blinn5SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "blinn6SG.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" "surfaceShader1SG.message" ":defaultLightSet.message";
@@ -5005,6 +5030,7 @@ relationship "shadowLink" ":lightLinker1" "blinn2SG.message" ":defaultLightSet.m
 relationship "shadowLink" ":lightLinker1" "blinn3SG.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" "blinn4SG.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" "blinn5SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "blinn6SG.message" ":defaultLightSet.message";
 connectAttr "layerManager.dli[0]" "defaultLayer.id";
 connectAttr "renderLayerManager.rlmi[0]" "defaultRenderLayer.rlid";
 connectAttr "worm_renderLayerManager.rlmi[0]" "worm_defaultRenderLayer.rlid";
@@ -5521,6 +5547,13 @@ connectAttr "tex_tongue.msg" "materialInfo16.m";
 connectAttr "skinCluster6.og[0]" "createColorSet4.ig";
 connectAttr "createColorSet4.og" "deleteColorSet7.ig";
 connectAttr "deleteColorSet7.og" "polyColorPerVertex5.ip";
+connectAttr "tex_ring.oc" "blinn6SG.ss";
+connectAttr "groupId23.msg" "blinn6SG.gn" -na;
+connectAttr "bodyShape.iog.og[46]" "blinn6SG.dsm" -na;
+connectAttr "blinn6SG.msg" "materialInfo17.sg";
+connectAttr "tex_ring.msg" "materialInfo17.m";
+connectAttr "polyColorPerVertex4.out" "groupParts17.ig";
+connectAttr "groupId23.id" "groupParts17.gi";
 connectAttr "tex_mouth.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo1.tgi[0].ni[0].dn"
 		;
 connectAttr "place2dTexture4.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo1.tgi[0].ni[1].dn"
@@ -5531,23 +5564,27 @@ connectAttr "blinn4SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo1.tgi[0].ni[
 		;
 connectAttr "blinn3SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo1.tgi[0].ni[4].dn"
 		;
-connectAttr "lambert3SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo1.tgi[0].ni[5].dn"
+connectAttr "blinn6SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo1.tgi[0].ni[5].dn"
 		;
-connectAttr "file3.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo1.tgi[0].ni[6].dn"
+connectAttr "lambert3SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo1.tgi[0].ni[6].dn"
 		;
-connectAttr "place2dTexture3.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo1.tgi[0].ni[7].dn"
+connectAttr "file3.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo1.tgi[0].ni[7].dn"
 		;
-connectAttr "phong1SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo1.tgi[0].ni[8].dn"
+connectAttr "place2dTexture3.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo1.tgi[0].ni[8].dn"
 		;
-connectAttr "tex_eye.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo1.tgi[0].ni[9].dn"
+connectAttr "phong1SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo1.tgi[0].ni[9].dn"
 		;
-connectAttr "blinn2SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo1.tgi[0].ni[10].dn"
+connectAttr "tex_eye.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo1.tgi[0].ni[10].dn"
 		;
-connectAttr "file4.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo1.tgi[0].ni[11].dn"
+connectAttr "blinn2SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo1.tgi[0].ni[11].dn"
 		;
-connectAttr "tex_pupil.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo1.tgi[0].ni[12].dn"
+connectAttr "file4.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo1.tgi[0].ni[12].dn"
 		;
-connectAttr "tex_tongue.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo1.tgi[0].ni[13].dn"
+connectAttr "tex_pupil.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo1.tgi[0].ni[13].dn"
+		;
+connectAttr "tex_ring.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo1.tgi[0].ni[14].dn"
+		;
+connectAttr "tex_tongue.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo1.tgi[0].ni[15].dn"
 		;
 connectAttr "surfaceShader1SG.pa" ":renderPartition.st" -na;
 connectAttr "surfaceShader2SG.pa" ":renderPartition.st" -na;
@@ -5569,11 +5606,13 @@ connectAttr "blinn2SG.pa" ":renderPartition.st" -na;
 connectAttr "blinn3SG.pa" ":renderPartition.st" -na;
 connectAttr "blinn4SG.pa" ":renderPartition.st" -na;
 connectAttr "blinn5SG.pa" ":renderPartition.st" -na;
+connectAttr "blinn6SG.pa" ":renderPartition.st" -na;
 connectAttr "tex_body.msg" ":defaultShaderList1.s" -na;
 connectAttr "tex_mouth.msg" ":defaultShaderList1.s" -na;
 connectAttr "tex_eye.msg" ":defaultShaderList1.s" -na;
 connectAttr "tex_pupil.msg" ":defaultShaderList1.s" -na;
 connectAttr "tex_tongue.msg" ":defaultShaderList1.s" -na;
+connectAttr "tex_ring.msg" ":defaultShaderList1.s" -na;
 connectAttr "place2dTexture1.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "place2dTexture2.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "place2dTexture3.msg" ":defaultRenderUtilityList1.u" -na;
