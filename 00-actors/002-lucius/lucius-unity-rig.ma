@@ -1,6 +1,6 @@
 //Maya ASCII 2019 scene
 //Name: lucius-unity-rig.ma
-//Last modified: Fri, Apr 05, 2019 01:15:54 PM
+//Last modified: Fri, Apr 05, 2019 01:23:52 PM
 //Codeset: UTF-8
 requires maya "2019";
 requires "mtoa" "3.1.2";
@@ -14,13 +14,13 @@ fileInfo "osv" "Mac OS X 10.14";
 createNode transform -s -n "persp";
 	rename -uid "EC05DD07-B34F-5B8A-0A15-B09BA75B8A26";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -0.31134603365169433 6.5743932041856548 7.671681803645007 ;
-	setAttr ".r" -type "double3" -8.1383527311207455 -722.59999999992897 -4.9747378351972901e-17 ;
+	setAttr ".t" -type "double3" 1.3129101628048794 5.2552240936577643 4.4859819241910728 ;
+	setAttr ".r" -type "double3" -0.93835273101337957 -704.19999999974846 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "A8948F20-E64B-0030-FFDF-49B442DE1B88";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999986;
-	setAttr ".coi" 6.9876193810569704;
+	setAttr ".coi" 4.0620581588020386;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -109,7 +109,7 @@ createNode mesh -n "BodyShapeDeformed" -p "Body";
 	setAttr -s 4 ".iog[0].og";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
-	setAttr ".pv" -type "double2" 0.41666668653488159 0.18142867088317871 ;
+	setAttr ".pv" -type "double2" 0.375 0.16637986898422241 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr ".cuvs" -type "string" "map1";
 	setAttr ".dcol" yes;
@@ -6473,7 +6473,8 @@ createNode displayLayer -n "jointLayer";
 createNode blendShape -n "blendShape1";
 	rename -uid "7D8B2CCF-4544-EC5A-8BDD-A5A4C690CBF0";
 	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
-	setAttr ".w[0]"  0;
+	setAttr -s 4 ".w[0:3]"  0 0 0 0;
+	setAttr -s 4 ".it[0].itg";
 	setAttr -s 2 ".it[0].itg[0].iti";
 	setAttr ".it[0].itg[0].iti[5500].irp" -type "pointArray" 14 0 0 0 1 0 0 0.099134728955959872
 		 1 0 0 0 1 0 0 0.11651626485399902 1 0 0 0.06219658927875571 1 0 0 0.024875876086298376
@@ -6504,18 +6505,45 @@ createNode blendShape -n "blendShape1";
 		 1 -0.00050352855760138482 -0.22560293413698673 0.040968649615024333 1 0.034175792708992958
 		 -0.31767184287309647 0.044981023296713829 1 ;
 	setAttr ".it[0].itg[0].iti[6000].ict" -type "componentList" 5 "vtx[0]" "vtx[117:118]" "vtx[120:124]" "vtx[342:343]" "vtx[345:348]";
-	setAttr ".it[0].sti" 0;
-	setAttr ".it[0].siw" 0.5;
+	setAttr ".it[0].itg[1].iti[6000].ipt" -type "pointArray" 22 0 0 0 1 0 -0.10071187431972817
+		 0.068239445579251878 1 0 -0.23067405707636113 0 1 0 -0.069518249249128417 0.040316729848086652
+		 1 0 -0.087391571460102568 0 1 0 -0.18757389827175075 0.0026970700810124981 1 0 0
+		 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 -0.06744249358490606 0 1 0 -0.069518249249128417
+		 0.040316729848086652 1 0 -0.087391571460102568 0 1 0 -0.18757389827175075 0.0026970700810124981
+		 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 ;
+	setAttr ".it[0].itg[1].iti[6000].ict" -type "componentList" 10 "vtx[0]" "vtx[2]" "vtx[12:14]" "vtx[22]" "vtx[117:118]" "vtx[120:124]" "vtx[270:271]" "vtx[276]" "vtx[342:343]" "vtx[345:348]";
+	setAttr ".it[0].itg[2].iti[6000].ipt" -type "pointArray" 32 0 0 0 1 0 0 0 1 0
+		 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0.089066552500298712 0 1 -0.10989053424736994 0.078603680357787198
+		 3.3306690738754696e-16 1 0 0.12233510732403441 0 1 -0.14472690803904698 0.17394775399048967
+		 0 1 0 0.044577161759888684 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0
+		 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0.089066552500298712 0 1 0.10989053424736994 0.078603680357787198
+		 3.3306690738754696e-16 1 0 0.12233510732403441 0 1 0.14472690803904698 0.17394775399048967
+		 0 1 0 0.044577161759888684 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 ;
+	setAttr ".it[0].itg[2].iti[6000].ict" -type "componentList" 18 "vtx[0]" "vtx[2]" "vtx[12:14]" "vtx[22]" "vtx[34]" "vtx[42]" "vtx[48:49]" "vtx[91]" "vtx[117:118]" "vtx[120:124]" "vtx[270:271]" "vtx[276]" "vtx[286]" "vtx[293]" "vtx[298:299]" "vtx[324]" "vtx[342:343]" "vtx[345:348]";
+	setAttr ".it[0].itg[3].iti[6000].ipt" -type "pointArray" 39 0 0 0 1 0 0 0 1 0
+		 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0.024426357043012104 -0.037957479792908089 0 1 0 1.0732030819582405e-09
+		 0 1 0.024993194369017147 -0.048857082285394426 0 1 -0.10810221066117265 -0.079179618121543172
+		 0 1 0.054933662645908043 -0.11494486884976141 0 1 -0.052289125408606196 -0.14097920214499293
+		 0 1 0 -0.085595757973351283 0 1 0 0 0 1 1.2903456081403419e-10 -0.033167994296263714
+		 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0
+		 1 -0.024426357043012104 -0.037957479792908089 0 1 -0.024993194369017147 -0.048857082285394426
+		 0 1 0.10810221066117265 -0.079179618121543172 0 1 -0.054933662645908043 -0.11494486884976141
+		 0 1 0.052289125408606196 -0.14097920214499293 0 1 0 -0.085595757973351283 0 1 0 0
+		 0 1 -1.2903456081403419e-10 -0.033167994296263714 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0
+		 0 1 0 0 0 1 0 0 0 1 ;
+	setAttr ".it[0].itg[3].iti[6000].ict" -type "componentList" 23 "vtx[0]" "vtx[2]" "vtx[12:14]" "vtx[22]" "vtx[34]" "vtx[36]" "vtx[41:42]" "vtx[48:49]" "vtx[59]" "vtx[91]" "vtx[93]" "vtx[117:118]" "vtx[120:124]" "vtx[270:271]" "vtx[276]" "vtx[286]" "vtx[292:293]" "vtx[298:299]" "vtx[304]" "vtx[324]" "vtx[326]" "vtx[342:343]" "vtx[345:348]";
+	setAttr ".it[0].siw" 1;
 	setAttr ".mlid" 0;
 	setAttr ".mlpr" 0;
-	setAttr ".pndr[0]"  0;
-	setAttr ".tgvs[0]" yes;
-	setAttr ".tpvs[0]" yes;
-	setAttr ".tgdt[0].cid" -type "Int32Array" 1 0 ;
+	setAttr -s 4 ".pndr[0:3]"  0 0 0 0;
+	setAttr -s 4 ".tgvs[0:3]" yes yes yes yes;
+	setAttr -s 4 ".tpvs[0:3]" yes yes yes yes;
+	setAttr ".tgdt[0].cid" -type "Int32Array" 4 0 1 2 3 ;
 	setAttr ".ibig[0].ibi[5500].ibtn" -type "string" "blink_0.5";
 	setAttr -s 4 ".ibig[0].ibi[5500].itc[0:3]" -type "float2" 0 0 0.2
 		 0.2 0.5 0.5 1 1;
-	setAttr ".aal" -type "attributeAlias" {"blink","weight[0]"} ;
+	setAttr ".aal" -type "attributeAlias" {"blink","weight[0]","brow","weight[1]","smile"
+		,"weight[2]","sad","weight[3]"} ;
 createNode tweak -n "tweak1";
 	rename -uid "3C10C892-774E-05D3-C65C-7EA272D3BED4";
 createNode objectSet -n "blendShape1Set";
@@ -6645,7 +6673,7 @@ connectAttr "blendShape1Set.mwc" "BodyShapeDeformed.iog.og[0].gco";
 connectAttr "groupId2.id" "BodyShapeDeformed.iog.og[1].gid";
 connectAttr "tweakSet1.mwc" "BodyShapeDeformed.iog.og[1].gco";
 connectAttr "blendShape1.og[0]" "BodyShapeDeformed.i";
-connectAttr "blendShape1.it[0].vt[0]" "BodyShapeDeformed.twl";
+connectAttr "tweak1.vl[0].vt[0]" "BodyShapeDeformed.twl";
 connectAttr "geo.di" "EyeLeft.do";
 connectAttr "geo.di" "EyeRight.do";
 connectAttr "pupilLeft_normalConstraint1.crx" "PupilLeft.rx";
