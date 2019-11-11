@@ -1,0 +1,247 @@
+SFX_APL
+Version=28
+GroupVersion=-1.000000
+Advanced=0
+HelpID=0
+ParentMaterial=0
+NumberOfNodes=11
+#NT=10100 1 Vertex Color-Hw Shader Nodes-Inputs Common
+	PC=14
+	name=1 v=5000 _VertexColor
+	version=1 v=2003 1.640000
+	posx=1 v=2003 -2071.868164
+	posy=1 v=2003 -59.059727
+	classname=1 v=5000 Vertex Color
+	submenuname=1 v=5000 Inputs Common
+	bitmapnodeindex=1 v=2002 70
+	helpid=1 v=2002 24
+	grpnodecolor=1 v=5012 5
+	grpPosX=1 v=2003 -546.642029
+	grpPosY=1 v=2003 -40.049500
+	colorsetindex_Vertex=2 e=1 v=2002 0
+	colorsetname_Vertex=2 e=2 v=5000 shadowVertexSet
+	perinstanceunshared_Vertex=2 e=3 v=2001 0
+	group=-1
+	ISC=4
+		SVT=2002 2002 0 0 0 
+		SVT=2001 2001 0 0 0 
+		SVT=5000 5000 0 0 0 
+		SVT=1001 1002 0 0 0 
+	OSC=7
+		SVT=5001 3003 0 _RGBA
+		CC=0
+		SVT=5001 3002 0 _RGB
+		CC=1
+			C=0 1 0 10 1 2 0
+			CPC=0
+		SVT=5001 2003 0 _Red
+		CC=0
+		SVT=5001 2003 0 _Green
+		CC=0
+		SVT=5001 2003 0 _Blue
+		CC=0
+		SVT=5001 2003 0 _Alpha
+		CC=0
+		SVT=5001 1002 0 
+		CC=0
+#NT=20001 0
+	PC=3
+	posx=1 v=2003 -250.453583
+	posy=1 v=2003 -252.256790
+	saveshadertodisk=2 e=0 v=5015 
+	group=-1
+	ISC=3
+		SVT=2002 2002 3 0 0 
+		SVT=5001 5016 1 0 0 
+		SVT=5001 5003 2 0 0 
+	OSC=0
+#NT=20002 0
+	PC=2
+	posx=1 v=2003 -517.953613
+	posy=1 v=2003 -303.506744
+	group=-1
+	ISC=1
+		SVT=5001 5004 1 0 0 
+	OSC=1
+		SVT=5001 5003 2 
+		CC=1
+			C=2 0 2 1 2 2 0
+			CPC=0
+#NT=20003 0
+	PC=2
+	posx=1 v=2003 -806.864014
+	posy=1 v=2003 -374.749359
+	group=-1
+	ISC=7
+		SVT=5001 5014 1 0 0 
+		SVT=5001 5005 2 0 0 
+		SVT=5001 5007 3 0 0 
+		SVT=5001 5008 4 0 0 
+		SVT=5001 5009 5 0 0 
+		SVT=5001 5011 7 0 0 
+		SVT=5001 5011 8 0 0 
+	OSC=1
+		SVT=5001 5004 6 
+		CC=1
+			C=3 0 6 2 0 1 0
+			CPC=0
+#NT=10100 1 Vertex Shader Grp-Hw Shader Nodes-Core
+	PC=12
+	name=1 v=5000 VertexShader
+	version=1 v=2003 1.030000
+	posx=1 v=2003 -1061.523926
+	posy=1 v=2003 -431.953827
+	classname=1 v=5000 Vertex Shader Grp
+	submenuname=1 v=5000 Core
+	bitmapnodeindex=1 v=2002 2
+	isadvanced=1 v=2001 1
+	helpid=1 v=2002 46
+	grpnodecolor=1 v=5012 5
+	grpPosX=1 v=2003 -816.164001
+	grpPosY=1 v=2003 -139.130997
+	group=-1
+	ISC=2
+		SVT=5001 3002 0 0 0 _ObjectVertexPosition
+		SVT=5001 1002 0 0 0 
+	OSC=2
+		SVT=5001 5005 0 
+		CC=1
+			C=4 0 0 3 1 2 0
+			CPC=0
+		SVT=5001 1002 0 
+		CC=0
+#NT=20008 0
+	PC=2
+	posx=1 v=2003 -1055.341553
+	posy=1 v=2003 -269.790161
+	group=-1
+	ISC=2
+		SVT=5001 3003 1 0 0 
+		SVT=5001 2003 3 0 0 
+	OSC=1
+		SVT=5001 5009 2 
+		CC=1
+			C=5 0 2 3 4 5 0
+			CPC=0
+#NT=20020 0
+	PC=2
+	posx=1 v=2003 -1316.794678
+	posy=1 v=2003 -421.161407
+	group=-1
+	ISC=6
+		SVT=5001 2003 1 0 0 
+		SVT=5001 2003 2 0 0 
+		SVT=5001 3001 3 0 0 
+		SVT=5001 2003 4 0 0 
+		SVT=5001 3002 5 0 0 
+		SVT=5001 2003 6 0 0 
+	OSC=3
+		SVT=5001 3001 7 
+		CC=0
+		SVT=5001 3002 8 
+		CC=0
+		SVT=5001 3003 9 
+		CC=1
+			C=6 2 9 5 0 1 0
+			CPC=0
+#NT=20026 0
+	PC=3
+	posx=1 v=2003 -2154.108154
+	posy=1 v=2003 -384.098175
+	supportmulticonnections=1 v=2001 1
+	group=-1
+	ISC=2
+		SVT=5001 2003 1 0 0 
+		SVT=5001 2003 2 0 0 
+	OSC=1
+		SVT=5001 2003 3 
+		CC=1
+			C=7 0 3 8 0 1 0
+			CPC=0
+#NT=20027 0
+	PC=2
+	posx=1 v=2003 -1952.620361
+	posy=1 v=2003 -372.662292
+	group=-1
+	ISC=2
+		SVT=5001 2003 1 0 0 
+		SVT=5001 2003 2 1 0 
+		SDV=3.000000
+	OSC=1
+		SVT=5001 2003 3 
+		CC=1
+			C=8 0 3 10 0 1 0
+			CPC=0
+#NT=10100 1 Texture Map-Hw Shader Nodes-Textures
+	PC=31
+	name=1 v=5000 _TextureMap
+	version=1 v=2003 1.910000
+	posx=1 v=2003 -2398.968018
+	posy=1 v=2003 -483.071594
+	previewswatch=1 v=2002 1
+	classname=1 v=5000 Texture Map
+	submenuname=1 v=5000 Textures
+	bitmapnodeindex=1 v=2002 64
+	helpid=1 v=2002 19
+	grpnodecolor=1 v=5012 6
+	grpPosX=1 v=2003 -1103.290039
+	grpPosY=1 v=2003 -17.517900
+	texturepath_MyTexture=2 e=1 v=5000 /Users/pasquale/dev/real-characters/00-actors/015-cow/wip/tex/skin.psd
+	defineinheader_MyTexture=2 e=1 v=2001 0
+	uvindex_UVs=2 e=2 v=2002 0
+	exposetoui_MyTexture=2 e=3 v=2001 1
+	uvsetname_UVs=2 e=3 v=5000 
+	perinstanceunshared_UVs=2 e=4 v=2001 0
+	fullpathinshader_MyTexture=2 e=4 v=2001 0
+	value_ConvertToLinearSpace=2 e=4 v=2001 0
+	autoPreviewTexture_MyTexture=2 e=4 v=2001 1
+	mipmaplevels_MyTexture=2 e=5 v=2002 -1
+	texturenodename_MyTexture=2 e=5 v=5000 
+	filter_Sampler=2 e=6 v=5012 0
+	addressu_Sampler=2 e=7 v=5012 0
+	addressv_Sampler=2 e=8 v=5012 0
+	addressw_Sampler=2 e=9 v=5012 0
+	bordercolor_Sampler=2 e=10 v=3003 0.000000,0.000000,0.000000,0.000000
+	uveditororder_MyTexture=2 e=12 v=2002 -1
+	uigroup_MyTexture=2 e=13 v=5000 
+	uiorder_MyTexture=2 e=13 v=2002 0
+	group=-1
+	ISC=4
+		SVT=5001 3001 0 0 0 _UV
+		SVT=5001 2003 0 0 0 
+		SVT=2001 2001 0 0 0 _ConvertToLinearSpace
+		SVT=1001 1002 0 0 0 
+	OSC=7
+		SVT=5001 3003 0 _RGBA
+		CC=0
+		SVT=5001 3002 0 _Color
+		CC=0
+		SVT=5001 2003 0 _Red
+		CC=1
+			C=9 2 0 7 0 1 0
+			CPC=0
+		SVT=5001 2003 0 _Green
+		CC=1
+			C=9 3 0 7 1 2 0
+			CPC=0
+		SVT=5001 2003 0 _Blue
+		CC=1
+			C=9 4 0 7 1 2 1
+			CPC=0
+		SVT=5001 2003 0 
+		CC=0
+		SVT=5001 1002 0 
+		CC=0
+#NT=20016 0
+	PC=2
+	posx=1 v=2003 -1713.042603
+	posy=1 v=2003 -374.791443
+	group=-1
+	ISC=2
+		SVT=5001 2003 1 0 0 
+		SVT=5001 3002 2 0 0 
+	OSC=1
+		SVT=5001 3002 3 
+		CC=1
+			C=10 0 3 6 4 5 0
+			CPC=0
